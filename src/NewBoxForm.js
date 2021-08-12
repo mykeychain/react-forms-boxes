@@ -1,6 +1,15 @@
 import React, { useState } from "react";
 
-/** newBoxForm: controlled component for adding new box to boxList */
+/** NewBoxForm: controlled component for adding new box to boxList 
+ * 
+ *  props:
+ *  - onSubmit (parent callback)
+ * 
+ *  state:
+ *  - formData: { height, width, backgroundColor }
+ * 
+ *  BoxList -> NewBoxForm
+*/
 function NewBoxForm({ onSubmit }) {
     const initialState = {
         height: "",
@@ -10,7 +19,7 @@ function NewBoxForm({ onSubmit }) {
 
     const [formData, setFormData] = useState(initialState);
 
-    /** handleChange: sets state with current form values */
+    /** handleChange: sets state with current form values. */
     function handleChange(evt) {
         const { name, value } = evt.target;
         setFormData(oldData => (
@@ -21,7 +30,9 @@ function NewBoxForm({ onSubmit }) {
         ));
     }
 
-    /** handleSubmit: invokes parent callback for submit */
+    /** handleSubmit: invokes parent callback for submit.
+     *  clears form on submit
+     */
     function handleSubmit(evt) {
         evt.preventDefault();
         onSubmit(formData);

@@ -3,7 +3,14 @@ import { v4 as uuid } from "uuid";
 import Box from "./Box.js";
 import NewBoxForm from "./NewBoxForm.js";
 
-/** Loni will do this */
+/** BoxList: manages boxes in the list
+ *  
+ *  State:
+ *  - boxList: array like [{id, height, weight, backgroundColor} ...]
+ * 
+ *  BoxList -> NewBoxForm
+ *          -> Box
+ */
 function BoxList() {
   const [boxList, setBoxList] = useState([]);
 
@@ -18,6 +25,7 @@ function BoxList() {
     setBoxList((oldList) => oldList.filter((box) => box.id !== id));
   }
 
+  /** Renders NewBoxForm and all boxes in BoxList */
   return (
     <div>
       <NewBoxForm onSubmit={onSubmit} />

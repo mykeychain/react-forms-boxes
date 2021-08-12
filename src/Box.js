@@ -1,7 +1,19 @@
 import React, { useState } from "react";
 
+/** Box: renders a new box
+ * 
+ *  Props:
+ *  - id 
+ *  - height
+ *  - width
+ *  - backgroundColor
+ *  - removeBox (parent callback)
+ * 
+ *  BoxList -> Box
+ */
 function Box({ id, height, width, backgroundColor, removeBox }) {
 
+  /** Removes the specified box. */
   function handleRemove(evt) {
     removeBox(id)
   }
