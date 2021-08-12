@@ -20,3 +20,5 @@ function Box({ id, height, width, backgroundColor, removeBox }) {
     </div>
   );
 }
+
+export default Box;
