@@ -9,8 +9,8 @@ function BoxList() {
     setBoxList((oldList) => [...oldList, newBox]);
   }
 
-  function removeBox(evt) {
-    setBoxList((oldList) => oldList.filter((box) => box.id !== evt.target.id));
+  function removeBox(id) {
+    setBoxList((oldList) => oldList.filter((box) => box.id !== id));
   }
 
   return (

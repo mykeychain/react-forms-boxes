@@ -2,6 +2,10 @@ import React, { useState } from "react";
 
 function Box({ id, height, width, backgroundColor, removeBox }) {
 
+  function handleRemove(evt) {
+    removeBox(id)
+  }
+
   const style = {
     width: `${width}px`,
     height: `${height}px`,
@@ -12,7 +16,7 @@ function Box({ id, height, width, backgroundColor, removeBox }) {
   return (
     <div className="Box">
       <div className="Box-actual" style={style}></div>
-      <button className="Box-remove" onClick={removeBox}>X</button>
+      <button className="Box-remove" onClick={handleRemove}>X</button>
     </div>
   );
 }
