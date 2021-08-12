@@ -22,12 +22,10 @@ function NewBoxForm({ onSubmit }) {
     /** handleChange: sets state with current form values. */
     function handleChange(evt) {
         const { name, value } = evt.target;
-        setFormData(oldData => (
-            {
+        setFormData(oldData => ({
             ...oldData,
             [name]: value
-            }
-        ));
+        }));
     }
 
     /** handleSubmit: invokes parent callback for submit.
